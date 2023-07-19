@@ -53,7 +53,8 @@ app.post( '/signup' ,async(req,res) =>{
             .insert({
                 name ,
                 email : LoginEmail[0].email ,
-                joined : new Date()
+                joined : new Date() ,
+                status : "admin"
             }).returning('*')
             return res.json(user[0])
         })
