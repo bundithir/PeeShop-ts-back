@@ -103,6 +103,15 @@ app.get('/kids/:category',async(req,res)=>{
     
 })
 
+app.get('/products',async(req,res)=> {
+    try{
+        const products = await db.select('*').from('products')
+        return res.send(products)
+    }catch (error) {
+        return res.status(400).json('Cannot Fetch Products')
+    }
+})
+
 app.get('/',(req,res)=> res.json("It's work"));
 
 
