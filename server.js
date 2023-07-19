@@ -54,7 +54,7 @@ app.post( '/signup' ,async(req,res) =>{
                 name ,
                 email : LoginEmail[0].email ,
                 joined : new Date() ,
-                status : "admin"
+                status : "customer"
             }).returning('*')
             return res.json(user[0])
         })
