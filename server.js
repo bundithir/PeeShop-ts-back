@@ -1,6 +1,6 @@
 const express = require('express')
 const cors = require('cors')
-const stripe = require('stripe')('sk_test_51MQcQrEYvt8k2nosnfLRVn85KwFLnc5N9DWSu7ZQzsHcenYzMUYwc65sF2JqWDg5NgfjyPCRxDZeWCby4BhKsJ2o00hJY1QcSc')
+const stripe = require('stripe')(process.env.VITE_STRIPE_SECRET_KEY)
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
 const app = express()
